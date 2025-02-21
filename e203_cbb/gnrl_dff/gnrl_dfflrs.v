@@ -58,18 +58,18 @@
   
   assign qout = qout_r;
   
-  `ifndef FPGA_SOURCE//{
-  `ifndef DISABLE_SV_ASSERTION//{
-  //synopsys translate_off
+
+  `ifndef VERILATOR
+    // pragma translate_off
     gnrl_xchecker # (
     .DW(1)
   ) sirv_gnrl_xchecker(
     .i_dat(lden),
     .clk  (clk)
   );
-  //synopsys translate_on
-  `endif//}
-  `endif//}
+`endif
+
+  
       
   
   endmodule

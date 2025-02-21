@@ -48,19 +48,16 @@ module gnrl_ltch # (
   
   assign qout = qout_r;
   
-  `ifndef FPGA_SOURCE//{
-  `ifndef DISABLE_SV_ASSERTION//{
-  //synopsys translate_off
+// pragma translate_off
+  `ifndef VERILATOR
   always_comb
   begin
     CHECK_THE_X_VALUE:
       assert (lden !== 1'bx) 
       else $fatal ("\n Error: Oops, detected a X value!!! This should never happen. \n");
   end
-  
-  //synopsys translate_on
-  `endif//}
-  `endif//}
+`endif 
+  // pragma translate_on
       
   
   endmodule

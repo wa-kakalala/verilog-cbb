@@ -56,18 +56,17 @@ module gnrl_dfflr # (
   
   assign qout = qout_r;
   
-  `ifndef FPGA_SOURCE//{
-  `ifndef DISABLE_SV_ASSERTION//{
-  //synopsys translate_off
+
+  // pragma translate_off
+`ifndef VERILATOR
   gnrl_xchecker # (
     .DW(1)
   ) sirv_gnrl_xchecker(
     .i_dat(lden),
     .clk  (clk)
   );
-  //synopsys translate_on
-  `endif//}
-  `endif//}
+  `endif
+  // pragma translate_on
       
   
   endmodule
