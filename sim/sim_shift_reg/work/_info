@@ -1,0 +1,142 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/29620/Desktop/tinylibcpu/sim/tb_top_cpu
+vgnrl_dfflr
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 NiczV=h9?GPY6kd?nDkli1
+IF:_DcLEm:7SCS3MhF3e:D2
+Z1 dD:/FPGA/verilog-cbb/sim/sim_shift_reg
+Z2 w1740245635
+8D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v
+FD:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v
+L0 36
+Z3 OL;L;10.6c;65
+Z4 !s108 1740249809.000000
+!s107 D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
+vgnrl_dffr
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 YnMi@Z7iS2hi;4Fiz9l@V2
+I`KzE0mKDocW4RdAz3adK_0
+R1
+R2
+8D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v
+FD:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v
+L0 34
+R3
+R4
+!s107 D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v|
+!i113 0
+R5
+R6
+vgnrl_xchecker
+Z7 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 GIXz0bNl59H9bkD>@4nJ<3
+Ih=`6fEMCiY`z1aGFj@1bb0
+!s105 gnrl_xchecker_sv_unit
+S1
+R1
+R2
+8D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv
+FD:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv
+L0 28
+R3
+!s108 1740249810.000000
+!s107 D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R6
+vshift_reg
+R7
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 aTSP@aDQl9ZcIPPU?QZSJ3
+I3keEIkzfhd@ng:Y1@1Ql21
+!s105 shift_reg_sv_unit
+S1
+R1
+w1740248743
+8D:/FPGA/verilog-cbb/common_cells/shift_reg.sv
+FD:/FPGA/verilog-cbb/common_cells/shift_reg.sv
+L0 16
+R3
+R4
+!s107 D:/FPGA/verilog-cbb/common_cells/shift_reg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/FPGA/verilog-cbb/common_cells/shift_reg.sv|
+!i113 0
+R8
+R6
+vshift_reg_gated
+R7
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 XhX_MSCzQbCl;eHQOlEKC1
+I8nSMD35XofIgk`YlM^57i0
+!s105 shift_reg_gated_sv_unit
+S1
+R1
+w1740249153
+8D:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv
+FD:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv
+L0 13
+R3
+R4
+!s107 D:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv|
+!i113 0
+R8
+R6
+vtb_shift_reg
+R7
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 AKbK^mT1a[JU<jOd?U[6]1
+I^Ln:fmh<`in5NfQ<OEWoI3
+!s105 tb_shift_reg_sv_unit
+S1
+R1
+w1740249773
+8D:/FPGA/verilog-cbb/sim/sim_shift_reg/tb_shift_reg.sv
+FD:/FPGA/verilog-cbb/sim/sim_shift_reg/tb_shift_reg.sv
+L0 1
+R3
+R4
+!s107 D:/FPGA/verilog-cbb/sim/sim_shift_reg/tb_shift_reg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/FPGA/verilog-cbb/sim/sim_shift_reg/tb_shift_reg.sv|
+!i113 0
+R8
+R6

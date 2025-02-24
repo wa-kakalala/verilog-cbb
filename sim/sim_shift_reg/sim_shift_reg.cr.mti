@@ -1,0 +1,36 @@
+D:/FPGA/verilog-cbb/common_cells/shift_reg.sv {1 {vlog -work work -vopt -sv -stats=none D:/FPGA/verilog-cbb/common_cells/shift_reg.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module shift_reg
+
+Top level modules:
+	shift_reg
+
+} {} {}} D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v {1 {vlog -work work -vopt -stats=none D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dfflr.v
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module gnrl_dfflr
+
+Top level modules:
+	gnrl_dfflr
+
+} {} {}} D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v {1 {vlog -work work -vopt -stats=none D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_dffr.v
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module gnrl_dffr
+
+Top level modules:
+	gnrl_dffr
+
+} {} {}} D:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv {1 {vlog -work work -vopt -sv -stats=none D:/FPGA/verilog-cbb/common_cells/shift_reg_gated.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module shift_reg_gated
+
+Top level modules:
+	shift_reg_gated
+
+} {} {}} D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv {1 {vlog -work work -vopt -sv -stats=none D:/FPGA/verilog-cbb/e203_cbb/gnrl_dff/gnrl_xchecker.sv
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+-- Compiling module gnrl_xchecker
+
+Top level modules:
+	gnrl_xchecker
+
+} {} {}}
