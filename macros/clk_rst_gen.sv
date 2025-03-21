@@ -16,6 +16,7 @@
  * @example rst_n 
  * wire rst_n ;
  * `rst_gen( rst_n,0,0,$urandom_range(100,300))
+ * =====================================================
  */ 
 
 `define clk_gen(CLK,CLK_INIT,FREQ,PHASE,DUTY,JITTER_MIN,JITTER_MAX)           \
