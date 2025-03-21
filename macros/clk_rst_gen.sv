@@ -49,9 +49,9 @@ initial begin                                                                 \
     rst_begin_time   = RST_BEGIN_TIME  ;                                      \
     rst_release_time = RST_RELEASE_TIME;                                      \
     force RST = !RST_VALUE ;                                                  \
-    #(int'(rst_begin_time));                                                  \
+    #rst_begin_time;                                                          \
     force RST = RST_VALUE;                                                    \
-    #(int'(rst_release_time));                                                \
+    #rst_release_time;                                                        \
     force RST = !RST_VALUE ;                                                  \
 end
 
