@@ -22,20 +22,19 @@
 `define clk_gen(CLK,CLK_INIT,FREQ,PHASE,DUTY,JITTER_MIN,JITTER_MAX)           \
  initial begin                                                                \
     real freq,duty,period,period_jitter,duty_cyc_pre,duty_cyc_pst,phase;      \
-    freq   = FREQ          ;                                                  \
-    duty   = DUTY          ;                                                  \
-    period = 1000*1.00/freq;                                                  \
-    period_jitter = period + $urandom_range(JITTER_MIN,JITTER_MAX);           \
+    freq   = FREQ                               ;                             \
+    duty   = DUTY                               ;                             \
+    period = 1000*1.00/freq                     ;                             \
+    phase  = PHASE                              ;                             \
+    CLK           = CLK_INIT                    ;                             \
     if( PHASE == -1 ) begin                                                   \
         phase = $urandom_range(0,500);                                        \
-    end else begin                                                            \
-        phase  = PHASE ;                                                      \
     end                                                                       \
-    CLK           = CLK_INIT                    ;                             \
-    duty_cyc_pre  = period_jitter * duty        ;                             \
-    duty_cyc_pst  = period_jitter * ( 1 - duty );                             \
     #(int'(phase));                                                           \
     forever begin                                                             \
+        period_jitter = period + $urandom_range(JITTER_MIN,JITTER_MAX);       \
+        duty_cyc_pre  = period_jitter * duty        ;                         \
+        duty_cyc_pst  = period_jitter * ( 1 - duty );                         \
         #(int'(duty_cyc_pre));                                                \
         CLK = ~CLK    ;                                                       \
         #(int'(duty_cyc_pst));                                                \
