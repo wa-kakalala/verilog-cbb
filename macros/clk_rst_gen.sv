@@ -26,7 +26,7 @@
     duty   = DUTY                               ;                             \
     period = 1000*1.00/freq                     ;                             \
     phase  = PHASE                              ;                             \
-    CLK           = CLK_INIT                    ;                             \
+    CLK    = CLK_INIT                           ;                             \
     if( PHASE == -1 ) begin                                                   \
         phase = $urandom_range(0,500);                                        \
     end                                                                       \
