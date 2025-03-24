@@ -21,7 +21,8 @@
                                                                                                           \
         virtual function void build_phase(uvm_phase phase);                                               \
             super.build_phase(phase);                                                                     \
-            uvm_config_db#(uvm_object_wrapper)::set(this,"``SQR_PATH``",``TC_NAME``_seq::type_id::get()); \
+            uvm_config_db#(uvm_object_wrapper)::set(this,"``SQR_PATH``.main_phase",                       \
+                "default_sequence", ``TC_NAME``_seq::type_id::get());                                     \
         endfunction : build_phase                                                                         \
                                                                                                           \
         virutal function void connect_phase(uvm_phase phase);                                             \
