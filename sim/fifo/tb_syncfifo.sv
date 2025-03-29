@@ -70,6 +70,7 @@ initial begin
         rd_en <= 1'b1;
         @(posedge clk);
     end
+    rd_en <= 1'b0;
 
     repeat(100) @(posedge clk);
     $finish;
@@ -79,7 +80,5 @@ initial begin
     $dumpfile("syncfifo.vcd"); // 生成的vcd文件名称
     $dumpvars(0, tb_syncfifo); // tb模块名称
 end
-
-
 
 endmodule 

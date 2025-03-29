@@ -1,13 +1,22 @@
 
-.PHONY: syncfifo clean 
-syncfifo: clean
-	@iverilog -g2005-sv -o syncfifo -gsupported-assertions                         \
-		-I ../../macros tb_syncfifo.sv            \
-	    ../../common_cells/syncfifo.v             \
-		../../e203_cbb/gnrl_dff/gnrl_xchecker.sv  \
-		../../e203_cbb/gnrl_dff/gnrl_dfflr.v
-	@vvp -n syncfifo
-	@gtkwave syncfifo.vcd
+TOP  := syncfifo_diffw
+FILE := 
+INC  := 
+
+INC  += -I ../../macros
+
+FILE += tb_$(TOP).sv 
+FILE += ../../e203_cbb/gnrl_dff/gnrl_dfflr.v
+FILE += ../../e203_cbb/gnrl_dff/gnrl_xchecker.sv
+FILE += ../../common_cells/syncfifo.v
+FILE += ../../common_cells/$(TOP).v
+
+
+.PHONY: clean 
+run: clean
+	@iverilog -g2005-sv -gsupported-assertions -o syncfifo_diffw  $(INC) $(FILE)
+	@vvp -n $(TOP) 
+	@gtkwave $(TOP).vcd
 
 clean:
-	@del syncfifo syncfifo.vcd 
+	@del $(TOP) $(TOP).vcd 
