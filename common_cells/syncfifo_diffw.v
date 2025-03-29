@@ -47,6 +47,7 @@ wire [DOUT_WIDTH-1:0] rdata      ;
 wire                  rdata_wr_en;
 wire                  rdata_full ;
 
+genvar idx;
 generate
     if( DOUT_WIDTH > DIN_WIDTH ) begin // 如果读位宽大于写位宽，则需要组合数据，组合成一个数据就写入到读取侧fifo中
         wire wdata_almost_full;
@@ -221,16 +222,28 @@ generate
         assign rdata_wr_en_cnt_nxt = rdata_wr_en_cnt + 1'b1;
         gnrl_dfflr #($clog2(RDATA_WR_EN_CNT_MAX+1)) gnrl_dfflr_inst_cnt(rdata_wr_en_cnt_ld,rdata_wr_en_cnt_nxt,rdata_wr_en_cnt,clk,rst_n);
 
+        // not good, even bad !!!
+        // if (MSB_FIFO == 1) begin
+        //     wire [DIN_WIDTH-1:0] wdata_r ;
+        //     assign wdata_r = wdata << (rdata_wr_en_cnt * DOUT_WIDTH);
+        //     assign rdata = wdata_r[DIN_WIDTH-1 : DIN_WIDTH-DOUT_WIDTH];
+        // end else begin
+        //     wire [DIN_WIDTH-1:0] wdata_r ;
+        //     assign wdata_r = wdata >> (rdata_wr_en_cnt * DOUT_WIDTH);
+        //     assign rdata = wdata_r[DOUT_WIDTH-1 : 0];
+        // end
+        wire  [DOUT_WIDTH-1:0] wdata_r [RDATA_WR_EN_CNT_MAX+1-1:0];
+        for( idx = 0;idx<RDATA_WR_EN_CNT_MAX+1;idx = idx + 1) begin 
+           assign wdata_r[idx] = wdata[idx*DOUT_WIDTH+:DOUT_WIDTH];
+        end
+
         if (MSB_FIFO == 1) begin
-            wire [DIN_WIDTH-1:0] wdata_r ;
-            assign wdata_r = wdata << (rdata_wr_en_cnt * DOUT_WIDTH);
-            assign rdata = wdata_r[DIN_WIDTH-1 : DIN_WIDTH-DOUT_WIDTH];
+            assign rdata = wdata_r[~rdata_wr_en_cnt];
+        end else begin 
+            assign rdata = wdata_r[rdata_wr_en_cnt];
         end
-        else begin
-            wire [DIN_WIDTH-1:0] wdata_r ;
-            assign wdata_r = wdata >> (rdata_wr_en_cnt * DOUT_WIDTH);
-            assign rdata = wdata_r[DOUT_WIDTH-1 : 0];
-        end
+
+
 
         assign wdata_rd_en = rdata_wr_en && (rdata_wr_en_cnt == RDATA_WR_EN_CNT_MAX);
     end
