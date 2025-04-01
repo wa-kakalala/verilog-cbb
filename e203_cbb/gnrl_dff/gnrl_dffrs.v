@@ -44,8 +44,7 @@ module gnrl_dffrs # (
   
   reg [DW-1:0] qout_r;
   
-  always @(posedge clk or negedge rst_n)
-  begin : DFFRS_PROC
+  always @(posedge clk or negedge rst_n) begin : DFFRS_PROC
     if (rst_n == 1'b0)
       qout_r <= {DW{1'b1}};
     else                  

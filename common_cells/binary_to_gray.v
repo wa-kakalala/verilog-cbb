@@ -13,10 +13,10 @@
 
 /// A binary to gray code converter.
 module binary_to_gray # (
-    parameter int N = -1
+    parameter  N = 8 
 )(
-    input  logic [N-1:0] A ,
-    output logic [N-1:0] Z
+    input   [N-1:0]  A  ,
+    output  [N-1:0]  Z
 );
 
 assign Z = A ^ (A >> 1);
