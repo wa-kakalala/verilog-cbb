@@ -81,10 +81,10 @@ initial begin
     @(posedge clk iff (rst_n));
     for( int i=0;i<`DATA_NUM;i++ ) begin 
         s_valid <= 1'b1;
-        s_data  <= $urandom_range(0,2000);
+        temp_data = $urandom_range(0,2000);
+        exp_queue.push_back(temp_data);
+        s_data  <= temp_data;
         @(posedge clk iff (s_ready));
-        exp_queue.push_back(s_data);
-        
         temp_data = $urandom_range(0,10);
         if( temp_data != 0 ) begin 
             s_valid <= 1'b0;

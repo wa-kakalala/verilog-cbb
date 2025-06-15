@@ -1,0 +1,12 @@
+QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
+Start time: 22:57:51 on Jun 15,2025
+vlog -work work "+define+TEST_DUT=bwdfwdpipe" -l compile_bwdfwdpipe.log -f filelist.f 
+-- Compiling module bwdpipe
+-- Compiling module fwdpipe
+-- Compiling module bwdfwdpipe
+-- Compiling module tb_pipe
+
+Top level modules:
+	tb_pipe
+End time: 22:57:51 on Jun 15,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

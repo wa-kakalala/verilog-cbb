@@ -22,8 +22,6 @@ regress:
 	vlog -work work +define+TEST_DUT=bwdfwdpipe -l compile_bwdfwdpipe.log -f filelist.f 
 	vsim -work work +nowarnTSCALE -lib work -novopt -do run.do -c -l sim_bwdfwdpipe.log tb_pipe 
 
-	
-
 # add wave tb_pipe/*
 # view structure
 # view signals
