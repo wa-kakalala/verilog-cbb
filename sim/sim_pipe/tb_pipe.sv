@@ -5,6 +5,7 @@
 @ version     : v1.0.0
 **************************************/
 `timescale 1ns/1ns
+import print_pkg::*;
 module tb_pipe();
 `define DATA_NUM 1000
 
@@ -56,9 +57,9 @@ function automatic void compare(bit [DWIDTH-1:0] act_queue[$],bit [DWIDTH-1:0] e
         end
     end
     if( dis_match ) begin 
-        $display("failed!");
+        show_fail();
     end else begin 
-        $display("successfully!");
+        show_pass();
     end
 endfunction 
 
