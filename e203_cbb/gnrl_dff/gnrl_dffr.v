@@ -44,13 +44,18 @@ module gnrl_dffr # (
   
   reg [DW-1:0] qout_r;
   
-  always @(posedge clk or negedge rst_n) begin : DFFR_PROC
+`ifdef FPGA_PLATFORM
+always @(posedge clk) begin : DFFR_PROC
+    if (rst_n == 1'b1)
+`else
+always @(posedge clk or negedge rst_n) begin : DFFR_PROC
     if (rst_n == 1'b0)
-      qout_r <= {DW{1'b0}};
+`endif
+        qout_r <= {DW{1'b0}};
     else                  
-      qout_r <= dnxt;
-  end
+        qout_r <= dnxt;
+end
   
-  assign qout = qout_r;
+assign qout = qout_r;
   
   endmodule

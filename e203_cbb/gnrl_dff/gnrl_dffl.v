@@ -43,6 +43,7 @@
 
 reg [DW-1:0] qout_r;
 
+
 always @(posedge clk) begin : DFFL_PROC
   if (lden == 1'b1)
     qout_r <= dnxt;

@@ -45,16 +45,20 @@ module gnrl_dfflr # (
   );
   
   reg [DW-1:0] qout_r;
-  
-  always @(posedge clk or negedge rst_n)
-  begin : DFFLR_PROC
+ 
+`ifdef FPGA_PLATFORM
+always @(posedge clk) begin : DFFLR_PROC
+    if (rst_n == 1'b1)
+`else
+always @(posedge clk or negedge rst_n) begin : DFFLR_PROC
     if (rst_n == 1'b0)
-      qout_r <= {DW{1'b0}};
+`endif
+        qout_r <= {DW{1'b0}};
     else if (lden == 1'b1)
       qout_r <= dnxt;
-  end
-  
-  assign qout = qout_r;
+end
+
+assign qout = qout_r;
   
 
   // pragma translate_off
